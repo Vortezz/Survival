@@ -1,0 +1,11 @@
+main: fr.vortezz.survival.Main
+name: Survival
+version: 1.0
+api-version: 1.16
+commands:
+  sconfig:
+  furnace:
+  sreload:
+  sgive:
+  heal:
+  feed:

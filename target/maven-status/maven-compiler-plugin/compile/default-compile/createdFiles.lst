@@ -1,0 +1,12 @@
+fr\vortezz\survival\commands\Config.class
+fr\vortezz\survival\commands\Feed.class
+fr\vortezz\survival\commands\Reload.class
+fr\vortezz\survival\listeners\BlockEvents.class
+fr\vortezz\survival\commands\Furnace.class
+fr\vortezz\survival\commands\Heal.class
+fr\vortezz\survival\utils\HeadsGenerator.class
+fr\vortezz\survival\Main.class
+fr\vortezz\survival\utils\ItemGenerator.class
+fr\vortezz\survival\craft\Craft.class
+fr\vortezz\survival\listeners\InventoriesEvents.class
+fr\vortezz\survival\inventories\ConfigInventories.class

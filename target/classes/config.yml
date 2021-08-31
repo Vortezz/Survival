@@ -1,0 +1,36 @@
+features:
+  # Smelt ore on break
+  autosmelt: 
+    activated: true
+    fortune: true
+  # Always have lapis lazuli in enchanting table
+  lapis:
+    activated: true
+  # Always have coal in furnace
+  coal:
+    activated: true
+  # Commands
+  commands:
+    furnace: true
+    feed: true
+    heal: true
+  # Hammers
+  hammers:
+    activated: true
+    # Desactivated upgrades will continue to work on already created hammers
+    upgrades:
+      smelt: true
+      speed: true
+      fortune: true
+  # Drop spawners on break
+  spawners:
+    activated: true
+    # Must have SilkTouch
+    silktouch: true
+    # Drop xp on break
+    xp: true
+  # Enable capture eggs
+  capture:
+    activated: true
+messages:
+  file: "en.yml"
