@@ -2,10 +2,42 @@ main: fr.vortezz.survival.Main
 name: Survival
 version: 1.0
 api-version: 1.16
+description: Don't lose time with so long actions !
+author: Vortezz
+website: www.vortezz.fr
+permissions:
+ survival.*:
+  description: Use all features (DANGEROUS)
+ survival.config.*:
+  description: Can view and edit config (DANGEROUS)
+ survival.config.view:
+  description: Can view config (DANGEROUS)
+ survival.config.edit:
+  description: Can edit config (DANGEROUS)
+ survival.feed:
+  description: Can use feed command
+ survival.heal:
+  description: Can use heal command
+ survival.feed.other:
+  description: Can use feed other peoples
+ survival.heal.other:
+  description: Can use heal other peoples
+ survival.furnace:
+  description: Can use furnace command
+ survival.give:
+  description: Can use sgive command
+ survival.reload:
+  description: Can use sreload command
 commands:
   sconfig:
+    usage: "Usage : /sconfig"
   furnace:
+    usage: "Usage : /furnace"
   sreload:
+    usage: "Usage : /sreload"
   sgive:
+    usage: "Usage : /sgive [user] [item] [amount]"
   heal:
+    usage: "Usage : /sgive (user)"
   feed:
+    usage: "Usage : /sgive (user)"
