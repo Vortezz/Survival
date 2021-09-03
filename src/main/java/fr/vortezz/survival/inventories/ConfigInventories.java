@@ -59,18 +59,18 @@ public class ConfigInventories {
 						ItemGenerator.createItem(Material.DIAMOND_PICKAXE, "§6" + messages.getString("hammer")));
 				configInventory.setItem(22, config.getBoolean("features.hammers.activated") ? ItemGenerator.trueItem()
 						: ItemGenerator.falseItem());
-				configInventory.setItem(14, ItemGenerator.createItem(Material.FURNACE,
-						"§6" + messages.getString("smelt") + " " + messages.getString("upgrade")));
+				configInventory.setItem(14,
+						ItemGenerator.createItem(Material.FURNACE, "§6" + messages.getString("usmelt")));
 				configInventory.setItem(23,
 						config.getBoolean("features.hammers.upgrades.smelt") ? ItemGenerator.trueItem()
 								: ItemGenerator.falseItem());
-				configInventory.setItem(15, ItemGenerator.createItem(Material.SUGAR,
-						"§6" + messages.getString("speed") + " " + messages.getString("upgrade")));
+				configInventory.setItem(15,
+						ItemGenerator.createItem(Material.SUGAR, "§6" + messages.getString("uspeed")));
 				configInventory.setItem(24,
 						config.getBoolean("features.hammers.upgrades.speed") ? ItemGenerator.trueItem()
 								: ItemGenerator.falseItem());
-				configInventory.setItem(16, ItemGenerator.createItem(Material.DIAMOND,
-						"§6" + messages.getString("fortune") + " " + messages.getString("upgrade")));
+				configInventory.setItem(16,
+						ItemGenerator.createItem(Material.DIAMOND, "§6" + messages.getString("ufortune")));
 				configInventory.setItem(25,
 						config.getBoolean("features.hammers.upgrades.fortune") ? ItemGenerator.trueItem()
 								: ItemGenerator.falseItem());
@@ -90,8 +90,7 @@ public class ConfigInventories {
 						ItemGenerator.createItem(Material.EXPERIENCE_BOTTLE, "§a" + messages.getString("xp")));
 				configInventory.setItem(21, config.getBoolean("features.spawners.xp") ? ItemGenerator.trueItem()
 						: ItemGenerator.falseItem());
-				configInventory.setItem(14,
-						ItemGenerator.createItem(Material.EGG, "§a" + messages.getString("egg")));
+				configInventory.setItem(14, ItemGenerator.createItem(Material.EGG, "§a" + messages.getString("egg")));
 				configInventory.setItem(23, config.getBoolean("features.capture.activated") ? ItemGenerator.trueItem()
 						: ItemGenerator.falseItem());
 				configInventory.setItem(27, HeadsGenerator.getHead("previous"));

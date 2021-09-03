@@ -7,9 +7,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Entity;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SpawnEggMeta;
 
 import fr.vortezz.survival.Main;
 
@@ -76,7 +78,7 @@ public class ItemGenerator {
 		FileConfiguration messages = Main.getMessages();
 		ItemStack item = new ItemStack(Material.MUSHROOM_STEW, size);
 		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName(ChatColor.GOLD + messages.getString("smelt") + " " + messages.getString("upgrade"));
+		meta.setDisplayName(ChatColor.GOLD + messages.getString("usmelt"));
 		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		meta.setCustomModelData(1);
 		item.setItemMeta(meta);
@@ -88,7 +90,7 @@ public class ItemGenerator {
 		FileConfiguration messages = Main.getMessages();
 		ItemStack item = new ItemStack(Material.MUSHROOM_STEW, size);
 		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName(ChatColor.GOLD + messages.getString("speed") + " " + messages.getString("upgrade"));
+		meta.setDisplayName(ChatColor.GOLD + messages.getString("uspeed"));
 		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		meta.setCustomModelData(2);
 		item.setItemMeta(meta);
@@ -100,7 +102,7 @@ public class ItemGenerator {
 		FileConfiguration messages = Main.getMessages();
 		ItemStack item = new ItemStack(Material.MUSHROOM_STEW, size);
 		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName(ChatColor.GOLD + messages.getString("fortune") + " " + messages.getString("upgrade"));
+		meta.setDisplayName(ChatColor.GOLD + messages.getString("ufortune"));
 		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		meta.setCustomModelData(3);
 		item.setItemMeta(meta);
@@ -115,16 +117,6 @@ public class ItemGenerator {
 		meta.setDisplayName(ChatColor.WHITE + messages.getString("egg"));
 		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		meta.setCustomModelData(4);
-		item.setItemMeta(meta);
-		item.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
-		return item;
-	}
-
-	public static ItemStack mobEggItem(int size, String name) {
-		ItemStack item = new ItemStack(Material.getMaterial(name + "_SPAWN_EGG"), size);
-		ItemMeta meta = item.getItemMeta();
-		meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-		meta.setCustomModelData(1);
 		item.setItemMeta(meta);
 		item.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
 		return item;

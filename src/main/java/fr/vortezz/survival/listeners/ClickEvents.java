@@ -10,8 +10,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import fr.vortezz.survival.Main;
+import fr.vortezz.survival.utils.EggGenerator;
 import fr.vortezz.survival.utils.ItemGenerator;
 
 public class ClickEvents implements Listener {
@@ -29,8 +32,10 @@ public class ClickEvents implements Listener {
 				&& event.getRightClicked().getType() != EntityType.PLAYER
 				&& config.getBoolean("features.capture.activated")) {
 			event.setCancelled(true);
-			event.getRightClicked().getWorld().dropItemNaturally(event.getRightClicked().getLocation(),
-					ItemGenerator.mobEggItem(1, event.getRightClicked().getType().toString()));
+			ItemStack egg = EggGenerator.getEgg(event.getRightClicked());
+			if (egg == null) return;
+			ItemMeta meta = egg.getItemMeta();
+			event.getRightClicked().getWorld().dropItemNaturally(event.getRightClicked().getLocation(), egg);
 			event.getRightClicked().getWorld().playEffect(event.getRightClicked().getLocation(), Effect.FIREWORK_SHOOT, 1);
 			event.getRightClicked().remove();
 			player.getInventory().getItemInMainHand()
@@ -48,6 +53,8 @@ public class ClickEvents implements Listener {
 						: false)
 				&& event.getClickedBlock().getType() == Material.SPAWNER && player.getGameMode() != GameMode.CREATIVE) {
 			event.setCancelled(true);
+		} else if (event.getClickedBlock().getType() != Material.SPAWNER && ItemGenerator.isEgg(player.getInventory().getItemInMainHand().getType().toString())) {
+			EggGenerator.resolveEggNBTTags(event);
 		}
 	}
 

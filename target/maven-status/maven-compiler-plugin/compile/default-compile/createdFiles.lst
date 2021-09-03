@@ -2,8 +2,11 @@ fr\vortezz\survival\commands\Config.class
 fr\vortezz\survival\commands\Feed.class
 fr\vortezz\survival\commands\Reload.class
 fr\vortezz\survival\listeners\BlockEvents.class
+fr\vortezz\survival\listeners\ClickEvents.class
+fr\vortezz\survival\utils\EggGenerator.class
 fr\vortezz\survival\commands\Furnace.class
 fr\vortezz\survival\commands\Heal.class
+fr\vortezz\survival\commands\Give.class
 fr\vortezz\survival\utils\HeadsGenerator.class
 fr\vortezz\survival\Main.class
 fr\vortezz\survival\utils\ItemGenerator.class

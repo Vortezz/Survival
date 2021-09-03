@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.vortezz</groupId>
   <artifactId>survival</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <name>Survival</name>
   <dependencies>
     <dependency>
@@ -17,6 +17,11 @@
             <version>1.5.21</version>
             <scope>provided</scope>
     </dependency>
+	<dependency>
+  		<groupId>de.tr7zw</groupId>
+  		<artifactId>item-nbt-api</artifactId>
+  		<version>2.8.0</version>
+	</dependency>
   </dependencies>
   <repositories>
     <repository>
@@ -27,20 +32,41 @@
         <id>minecraft-repo</id>
         <url>https://libraries.minecraft.net/</url>
     </repository>
+    <repository>
+		<id>codemc-repo</id>
+		<url>https://repo.codemc.org/repository/maven-public/</url>
+		<layout>default</layout>
+	</repository>
   </repositories>
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<maven.compiler.release>13</maven.compiler.release>
+	<maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <build>
-	<pluginManagement>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-			</plugin>
-		</plugins>
-	</pluginManagement>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <id>shade</id>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <relocations>
+            <relocation>
+              <pattern>de.tr7zw.changeme.nbtapi</pattern>
+              <shadedPattern>shaded.fr.vortezz.survival.nbtapi</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
+      </plugin>
+   </plugins>
   </build>
 </project>
