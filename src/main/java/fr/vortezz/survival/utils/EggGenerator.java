@@ -11,7 +11,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.material.MaterialData;
 
 import de.tr7zw.changeme.nbtapi.NBTItem;
 
@@ -50,10 +49,6 @@ public class EggGenerator {
 			case "DONKEY":
 				Donkey donkey = (Donkey) entity;
 				nbtItem.setBoolean("Tame", donkey.isTamed());
-				break;
-			case "ENDERMAN":
-				Enderman enderman = (Enderman) entity;
-				nbtItem.setString("carriedMaterialState", enderman.getCarriedMaterial().toString());
 				break;
 			case "EVOKER":
 				Evoker evoker = (Evoker) entity;
@@ -165,11 +160,6 @@ public class EggGenerator {
 			case "DONKEY":
 				Donkey donkey = (Donkey) entity;
 				donkey.setTamed(nbtItem.getBoolean("Tame"));
-				break;
-			case "ENDERMAN":
-				Enderman enderman = (Enderman) entity;
-				enderman.setCarriedMaterial(
-						new MaterialData(Material.getMaterial(nbtItem.getString("carriedMaterialState"))));
 				break;
 			case "EVOKER":
 				Evoker evoker = (Evoker) entity;

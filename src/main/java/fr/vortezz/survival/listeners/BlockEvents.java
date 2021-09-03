@@ -58,7 +58,8 @@ public class BlockEvents implements Listener {
 				Inventory i = ((InventoryHolder) block.getState()).getInventory();
 				i.setItem(1, new ItemStack(Material.AIR));
 			}
-		} else if (player.getInventory().getItemInMainHand().getItemMeta().hasCustomModelData()
+		} else if (player.getInventory().getItemInMainHand().hasItemMeta()
+				&& player.getInventory().getItemInMainHand().getItemMeta().hasCustomModelData()
 				&& player.getInventory().getItemInMainHand().getItemMeta().getCustomModelData() == 1
 				&& player.getInventory().getItemInMainHand().getType().equals(Material.DIAMOND_PICKAXE)
 				&& player.getGameMode() == GameMode.SURVIVAL && config.getBoolean("features.hammers.activated")) {
