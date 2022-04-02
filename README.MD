@@ -1,4 +1,4 @@
-# Survival
+# Survival (Outdated)
 
 <img align="right" src="https://vortezz.fr/public/assets/picture/survival.png">
 <br>
